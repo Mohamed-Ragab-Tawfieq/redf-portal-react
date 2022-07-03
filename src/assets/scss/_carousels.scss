@@ -1,0 +1,82 @@
+// .slider-nav {
+//     display: flex;
+//     align-items: center;
+
+//     .slider-nav-item {
+//         &+.slider-nav-item {
+//             margin-inline-start: .5rem;
+//         }
+
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+
+//         width: 30px;
+//         height: 30px;
+
+//         border: 1px solid $green;
+//         border-radius: .5rem;
+
+//         cursor: pointer;
+
+//         img {
+//             height: .65rem;
+//         }
+//     }
+// }
+
+// .owl-carousel {
+//     .item {
+//         .card {
+//             margin-inline-start: 1px;
+//         }
+//     }
+
+//     &.video-carousel {
+//         &,
+//         .owl-stage-outer,
+//         .owl-stage,
+//         .owl-stage,
+//         .owl-item,
+//         .item,
+//         .item-video {
+//             height: 100%;
+//         }
+
+//         .item-video {
+//             display: block;
+//             min-height: 260px;
+//             border-radius: 1.15rem;
+//             overflow: hidden;
+//         }
+//     }
+
+// }
+
+// .main-slider {
+//     .owl-theme {
+//         .owl-dots {
+//             .owl-dot {
+//                 span {
+//                     width: 12px;
+//                     height: 12px;
+//                     background-color: $gray-500;
+//                     transition: all ease-in-out $transition-duration;
+//                 }
+
+//                 &.active {
+//                     span {
+//                         width: 2rem;
+//                         background-color: $green;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// .e-systems {
+//     .owl-theme {
+//         box-shadow: $box-shadow-2;
+//     }
+// }

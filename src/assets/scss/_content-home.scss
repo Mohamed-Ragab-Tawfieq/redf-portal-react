@@ -1,0 +1,106 @@
+// section {
+//     &:not(.inner) {
+//         padding: 2.5rem 0 2rem;
+//     }
+
+//     .head {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+
+//         .title {
+//             font-size: 1.5rem;
+
+//             &,
+//             a {
+//                 color: $blue;
+//             }
+
+//             .arrow {
+//                 height: 1rem;
+//                 margin-inline-start: .25rem;
+//                 transition: all ease-in-out $transition-duration;
+//             }
+
+//             &:hover {
+//                 .arrow {
+//                     transform: translateX(-3px);
+//                 }
+//             }
+//         }
+
+//     }
+
+//     .content {
+//         margin-top: 1rem;
+//     }
+
+//     &.news,
+//     &.images {
+//         .content {
+//             .card {
+//                 margin-bottom: 0;
+//             }
+//         }
+//     }
+
+//     &.events {
+//         .content {
+//             .card {
+//                 &+.card {
+//                     margin-top: 1rem;
+//                 }
+//             }
+//         }
+//     }
+
+//     &.ads {
+//         &:not(.inner) {
+//             display: flex;
+//             flex-direction: column;
+//             height: 100%;
+
+//             .content {
+//                 flex-grow: 1;
+
+//                 .owl-carousel,
+//                 .owl-stage-outer,
+//                 .owl-stage,
+//                 .owl-stage,
+//                 .owl-item,
+//                 .item,
+//                 .card {
+//                     height: 100%;
+//                 }
+//             }
+//         }
+//     }
+
+//     &.videos {
+//         &:not(.inner) {
+//             display: flex;
+//             flex-direction: column;
+//             height: 100%;
+
+//             .content {
+//                 flex-grow: 1;
+//             }
+//         }
+//     }
+
+//     &.services {
+//         &:not(.inner) {
+//             padding-bottom: 0;
+
+//             .content {
+//                 margin-top: 0;
+
+//                 .card {
+//                     &.service-card {
+//                         margin-bottom: 2rem;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

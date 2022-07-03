@@ -1,0 +1,125 @@
+// colors
+$white: #fff !default;
+$gray-100: #fcfcfc !default;
+$gray-200: #e4e4e4 !default;
+$gray-300: #dddfeb !default;
+$gray-400: #c4c4c4 !default;
+$gray-500: #adadad !default;
+$gray-600: #858796 !default;
+$gray-700: #575756 !default;
+$gray-800: #474747 !default;
+$gray-900: #303643 !default;
+$black: #262c3a !default;
+
+$cyan: #058a86 !default;
+$cyan_light: #2abab5 !default;
+$cyan_lighter: #1befe8 !default;
+$blue: #007eb5 !default;
+$indigo: #37326d !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: rgba(#f44343, 0.9) !default;
+$orange: #fd7e14 !default;
+$yellow: #f6c23e !default;
+$green: #227d55 !default;
+
+$theme-colors: (
+    "primary": $cyan_light,
+    "secondary": $gray-700,
+    "success": $green,
+    "info": $cyan,
+    "warning": $yellow,
+    "danger": $red,
+    "light": $gray-200,
+    "dark": $indigo,
+);
+
+// Custom Colors
+$grad-1: $cyan;
+$grad-2: lighten($cyan, 20%);
+
+// Buttons
+$btn-border-radius: 0.5rem;
+
+// Grid columns
+$grid-gutter-width: 57px !default;
+
+// Typography
+$body-color: $gray-700;
+$font-family-sans-serif: "Cairo", sans-serif;
+$font-weight-normal: 600;
+$paragraph-margin-bottom: 0;
+$headings-margin-bottom: 0;
+$link-color: #fff;
+
+$border-radius: 0.5rem;
+$navbar-brand-margin-end: 0;
+
+// hr
+$hr-margin-y: 28px;
+$hr-height: 0.5px;
+
+// dropdown
+$dropdown-link-hover-bg: $gray-100;
+$dropdown-link-active-bg: transparent;
+$dropdown-padding-y: 0;
+$dropdown-item-padding-y: 0.4rem;
+$caret-vertical-align: 0.155em;
+
+// Cards
+$card-border-color: rgba(228, 228, 228, 0.5);
+$card-cap-bg: transparent;
+$card-cap-padding-y: 1.25rem;
+$card-cap-padding-x: 2rem;
+$card-box-shadow: 0px 4px 10px rgba(196, 196, 196, 0.16);
+
+// input
+$input-border-color: $gray-200;
+$input-border-radius: 0.5rem;
+$input-focus-box-shadow: none;
+$input-group-addon-color: #d5d9d9;
+$input-group-addon-bg: transparent;
+$input-group-addon-border-color: $gray-200;
+
+// Breadcrumbs
+$breadcrumb-padding-x: 0;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-divider: "\f100";
+$breadcrumb-divider-flipped: $breadcrumb-divider;
+$breadcrumb-divider-color: rgba(
+    $color: #fff,
+    $alpha: 0.5,
+);
+$breadcrumb-active-color: #fff;
+
+// badge
+$badge-padding-y: 0.5rem;
+$badge-padding-x: 1rem;
+$badge-font-weight: 400;
+$badge-font-size: 0.88rem;
+
+// Paginations
+$pagination-margin-start: 0;
+$pagination-color: #4a4a4a;
+$pagination-hover-color: #4a4a4a;
+$pagination-disabled-color: rgba($gray-900, 0.5);
+$pagination-hover-border-color: $gray-900;
+$pagination-bg: rgba(
+    $color: $gray-900,
+    $alpha: 0.1,
+);
+$pagination-active-bg: $cyan;
+$pagination-border-width: 1px;
+$pagination-border-radius: 50%;
+$pagination-margin-start: 0.8rem;
+
+// alerts
+$alert-color: $gray-700;
+$alert-padding-y: 1rem;
+$alert-padding-x: 3.5rem;
+
+// modals
+$modal-content-border-radius: 1.2rem;
+$modal-md: 725px;
+$modal-sm: 530px;
+$modal-header-padding: 2.7rem 3.5rem;

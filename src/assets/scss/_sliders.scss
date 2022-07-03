@@ -1,0 +1,348 @@
+.slider-title {
+    margin-top: 4rem;
+    text-align: center;
+
+    h3 {
+        color: $cyan;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+    }
+
+    h6 {
+        font-weight: 700;
+        color: rgba($gray-700, 0.6);
+    }
+}
+
+.react-multi-carousel-list {
+    padding-top: 7rem;
+    text-align: center;
+
+    @media (min-width: 992px) {
+        display: grid !important;
+        grid-template-rows: auto 1fr;
+    }
+
+    .react-multi-carousel-track {
+        grid-row-start: 2;
+    }
+
+    .react-multiple-carousel__arrow {
+        top: 0;
+        left: auto;
+        right: auto;
+
+        width: 3.3rem;
+        height: 3.3rem;
+
+        border-radius: 50%;
+
+        margin-top: 1.5rem;
+        font-size: 2rem;
+
+        &--left {
+            background-color: #fff;
+            border: 1px solid #ececec;
+            inset-inline-start: 35vw;
+
+            @media (max-width: 767px) {
+                inset-inline-start: 24vw;
+            }
+
+            &:hover {
+                background-color: #fff;
+                filter: brightness(95%);
+            }
+
+            &::before {
+                color: #505050;
+                content: "\2190";
+            }
+        }
+
+        &--right {
+            background-color: $cyan;
+            color: #fff;
+            box-shadow: (0px 1rem 2.5rem rgba(0, 147, 144, 0.15));
+            inset-inline-end: 35vw;
+
+            @media (max-width: 767px) {
+                inset-inline-end: 24vw;
+            }
+
+            &:hover {
+                background-color: $cyan;
+                filter: brightness(95%);
+            }
+
+            &::before {
+                content: "\2192";
+            }
+        }
+    }
+}
+
+.owl-products {
+    .react-multi-carousel-list {
+        &.mobile {
+            @media (min-width: 992px) {
+                display: none !important;
+            }
+        }
+
+        .item {
+            margin-inline: 0.5rem;
+
+            .item-title {
+                position: relative;
+                color: #fff;
+                text-align: center;
+                font-weight: 800;
+                padding-block: 1rem;
+
+                @media (min-width: 768px) {
+                    margin-top: 2rem;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    inset-inline-end: 0;
+                    z-index: -1;
+
+                    width: 100%;
+                    height: 200px;
+
+                    background-color: $cyan;
+                    padding-top: 1rem;
+                    border-radius: 1rem;
+
+                    @media (max-width: 767px) {
+                        height: 100px;
+                    }
+                }
+            }
+
+            img {
+                width: 90%;
+                height: 205px;
+                margin: auto;
+            }
+
+            &.no-img {
+                color: #fff;
+                background-color: #134773;
+                background-image: url(../images/logo-no-text.svg);
+                background-size: cover;
+
+                height: 260px;
+                text-align: center;
+                border-radius: 1rem;
+
+                @media (max-width: 991px) {
+                    height: auto;
+                }
+
+                @media (min-width: 768px) and (max-width: 991px) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    height: 380px;
+                }
+
+                p {
+                    padding-inline: 0.5rem;
+
+                    @media (max-width: 767px) {
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                }
+
+                .btn {
+                    margin-top: 1rem;
+                    width: 50%;
+
+                    background-color: #fff;
+                    color: #d3b98c;
+
+                    @media (max-width: 991px) {
+                        margin-bottom: 1rem;
+                        width: auto;
+                    }
+
+                    @media (min-width: 768px) and (max-width: 991px) {
+                        margin-top: auto;
+                    }
+                }
+
+                .item {
+                    &:last-of-type {
+                        margin-top: 4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.stats-slider {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+        z-index: -1;
+
+        width: 80vw;
+        height: 220px;
+
+        background-color: #f5f5f5;
+        border-radius: 6rem;
+
+        @media (max-width: 767px) {
+            height: 160px;
+            border-radius: 2rem;
+        }
+    }
+
+    .owl-stats {
+        padding-top: 7rem;
+
+        .react-multi-carousel-track {
+            position: relative;
+
+            .react-multi-carousel-item {
+                &--active {
+                    &:nth-of-type(3n + 3) {
+                        .item {
+                            h2 {
+                                &::before {
+                                    background-color: $cyan;
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(2n + 2) {
+                        .item {
+                            h2 {
+                                &::before {
+                                    background-color: #18a7b9;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .item {
+                    padding-block: 5rem;
+                    text-align: center;
+
+                    @media (max-width: 767px) {
+                        padding-block: 3rem;
+                    }
+
+                    h2 {
+                        position: relative;
+                        color: #000;
+                        font-weight: 900;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: -1rem;
+                            left: 2.9rem;
+                            z-index: -1;
+
+                            width: 2.4rem;
+                            height: 2.4rem;
+
+                            background-color: rgba($orange, 0.5);
+                            border-radius: 50%;
+
+                            @media (max-width: 767px) {
+                                left: auto;
+                                right: 50%;
+                                transform: translateX(50%);
+                            }
+                        }
+                    }
+
+                    h6 {
+                        color: $gray-700;
+                        margin-top: 0.5rem;
+                    }
+                }
+            }
+
+            @media (min-width: 992px) {
+                .react-multiple-carousel__arrow {
+                    top: auto;
+                    margin-top: 0;
+
+                    &--right {
+                        inset-inline-end: 5rem;
+                    }
+
+                    &--left {
+                        inset-inline-start: 5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.owl-news {
+    .react-multi-carousel-item {
+        filter: drop-shadow(0px 2px 5px rgba(0, 147, 144, 0.2));
+
+        .card {
+            border: none;
+            padding: 0.5rem;
+            margin: 10px;
+
+            .date {
+                position: absolute;
+                top: 1rem;
+                inset-inline-start: 1rem;
+                z-index: 0;
+
+                display: flex;
+                align-items: center;
+
+                background-color: lighten($orange, 25%);
+                color: #fff;
+
+                border-radius: 0.5rem;
+                padding: 0.3rem 1rem;
+
+                &::before {
+                    content: url(../images/icons/calendar2.svg);
+                    margin-inline: -5px 10px;
+                    margin-top: 3px;
+                }
+            }
+
+            .card-footer {
+                border: none;
+
+                @media (max-width: 767px) {
+                    padding: 0.5rem;
+                }
+
+                a {
+                    color: $cyan;
+                }
+            }
+        }
+    }
+}
