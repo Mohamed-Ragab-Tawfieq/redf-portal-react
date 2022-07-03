@@ -5,7 +5,7 @@ $select-height: 40px;
     color: $gray-500 !important;
 }
 
-.select,
+.custom-select,
 ::placeholder {
     color: $gray-500;
 
@@ -13,115 +13,68 @@ $select-height: 40px;
     font-weight: 500;
 }
 
-.select,
-.input-group-text {
-    border: 1px solid $gray-200;
-}
-
-input {
-    &:focus {
-        & ~ .input-group-text {
-            background-color: transparent !important;
-            border: 1px solid $input-focus-border-color;
-        }
-    }
-}
-
 .input-group {
-    .form-control {
-        border-inline-end: none !important;
-        border-radius: 0.5rem 0 0 0.5rem !important;
+    display: flex;
+
+    &:not(.icon-end) {
+        .form-control {
+            order: 2;
+
+            border-radius: 0.5rem;
+
+            border-inline-start: none;
+            border-start-start-radius: 0 !important;
+            border-end-start-radius: 0 !important;
+            border-start-end-radius: 0.5rem !important;
+            border-end-end-radius: 0.5rem !important;
+
+            &:focus {
+                & + .input-group-text {
+                    border: 1px solid #86b7fe;
+                }
+            }
+        }
+
+        .input-group-text {
+            order: 1;
+
+            background: #fff;
+
+            border-inline-end: none;
+            border-start-start-radius: 0.5rem !important;
+            border-end-start-radius: 0.5rem !important;
+            border-start-end-radius: 0 !important;
+            border-end-end-radius: 0 !important;
+        }
     }
 
-    .input-group-text {
-        border-inline-start: none !important;
-        border-radius: 0 0.5rem 0.5rem 0 !important;
+    &.icon-end {
+        .form-control {
+            order: 1;
+
+            border-inline-end: none;
+            border-start-end-radius: 0 !important;
+            border-end-end-radius: 0 !important;
+            border-start-start-radius: 0.5rem !important;
+            border-end-start-radius: 0.5rem !important;
+        }
+
+        .input-group-text {
+            order: 2;
+
+            border-inline-start: none;
+            border-start-end-radius: 0.5rem !important;
+            border-end-end-radius: 0.5rem !important;
+            border-start-start-radius: 0 !important;
+            border-end-start-radius: 0 !important;
+        }
     }
 }
 
-.select {
-    display: inline-block;
-    position: relative;
+.custom-select {
+    padding-inline: 1rem;
 
-    width: 100%;
-    height: $select-height;
-
-    border-radius: 0.5rem;
-
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-
-    .select-hidden {
-        display: none;
-        visibility: hidden;
-        padding-right: 10px;
-    }
-
-    .select-styled {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-
-        height: fit-content;
-        padding: 8px 15px;
-        transition: all 0.2s ease-in;
-
-        &:after {
-            content: "\711";
-            position: absolute;
-            bottom: 50%;
-            inset-inline-end: 0.5rem;
-            transform: translateY(50%);
-        }
-
-        &:active,
-        &.active {
-            &:after {
-                content: "\710";
-            }
-        }
-    }
-
-    .select-options {
-        display: none;
-
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-
-        margin: 0;
-        padding: 0;
-
-        border: 1px solid rgba($color: $gray-400, $alpha: 0.3);
-        border-radius: 0.5rem;
-
-        z-index: 999;
-
-        li {
-            background-color: #fff;
-
-            margin: 0;
-            padding: 12px 0;
-
-            text-indent: 15px;
-            text-align: start;
-            transition: all 0.15s ease-in;
-
-            &[rel="hide"] {
-                display: none;
-            }
-
-            &:hover {
-                background-color: darken(#fff, 5%);
-            }
-
-            & + li {
-                border-top: 1px solid rgba($color: $gray-400, $alpha: 0.3);
-            }
-        }
+    &:focus-visible {
+        outline: 0;
     }
 }

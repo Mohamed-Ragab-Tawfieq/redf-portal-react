@@ -114,65 +114,68 @@ section {
 
             .side-item {
                 position: relative;
-                background-color: #fff;
-
-                padding: 1rem;
                 margin-bottom: 0.6rem;
-
-                border: 1.2px solid #e4e4e4;
-                border-radius: 1.25rem;
 
                 display: flex;
                 align-items: center;
 
                 a {
+                    display: flex;
+                    flex: 1 1 auto;
+
+                    padding: 1rem;
+                    padding-inline-start: 3rem;
+
+                    background-color: #fff;
                     color: #474747;
-                }
 
-                svg,
-                img {
-                    margin-inline-end: 0.5rem;
-                }
-
-                svg {
-                    font-size: 1.5rem;
-                    color: #26b4b0;
-                }
-
-                &:hover {
-                    border: 1px solid $cyan;
-                }
-
-                &.active {
-                    background-color: $cyan_light;
-
-                    a,
-                    svg {
-                        color: #fff;
-                    }
+                    border: 1px solid #e4e4e4;
+                    border-radius: 1.25rem;
 
                     &:hover {
-                        background-color: darken(#26b4b0, 5%);
+                        border: 1px solid $cyan;
                     }
+
+                    &.active {
+                        background-color: $cyan_light;
+                        color: #fff;
+
+                        & ~ img {
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+                }
+
+                img {
+                    position: absolute;
+                    bottom: 50%;
+                    inset-inline-start: 1rem;
+                    transform: translateY(50%);
                 }
             }
         }
     }
 
     .filters {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 1rem;
         margin-bottom: 1.25rem;
 
-        .select {
-            @media (max-width: 991px) {
-                margin-top: 0.5rem;
-            }
+        @media (max-width: 991px) {
+            grid-template-columns: 1fr;
         }
 
-        .select,
+        .custom-select,
         input,
         .input-group-text {
             padding-block: 0.5rem;
             background-color: $gray-100;
+        }
+
+        .custom-select {
+            border: 1px solid #e4e4e4;
+            border-radius: 0.5rem;
         }
     }
 

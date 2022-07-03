@@ -57,7 +57,7 @@ const Header = () => {
                                 </button>
 
                                 <ul className="dropdown-menu" aria-labelledby="dropdownUser">
-                                    <li><NavLink className="dropdown-item" to="">Action</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="page/myappointments">My Appointments</NavLink></li>
                                     <li><NavLink className="dropdown-item" to="">Another action</NavLink></li>
                                     <li><NavLink className="dropdown-item" to="">Something else here</NavLink></li>
                                 </ul>

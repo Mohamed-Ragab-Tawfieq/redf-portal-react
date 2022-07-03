@@ -45,6 +45,12 @@ a {
     }
 }
 
+img {
+    &.white-img {
+        filter: brightness(0) invert(1);
+    }
+}
+
 ul {
     list-style-type: none;
     padding-left: 0;
@@ -91,74 +97,53 @@ textarea {
     margin-bottom: 1.5rem;
 }
 
-.bottom-sec {
-    position: relative;
+.pagination {
+    margin-top: 3.75rem;
+    justify-content: center;
+
+    .page-item {
+        &:first-of-type,
+        &:last-of-type {
+            .page-link {
+                background-color: transparent;
+            }
+        }
+
+        .page-link {
+            &:first-of-type {
+                margin-inline-end: 0.8rem;
+            }
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 2.4rem;
+            height: 2.4rem;
+
+            border: none;
+        }
+    }
+}
+
+.chat {
+    position: fixed;
+    bottom: 3rem;
+    inset-inline-end: 3rem;
+    z-index: 10;
+
+    background-color: #d3b98c;
+    border-radius: 50%;
 
     display: flex;
+    justify-content: center;
     align-items: center;
 
-    @media (min-width: 992px) {
-        margin-top: 3.5rem;
-    }
+    width: 5rem;
+    height: 5rem;
 
-    @media (max-width: 991px) {
-        flex-direction: column;
-        margin-block: 3.5rem;
-    }
-
-    .pagination-wrap {
-        margin: auto;
-
-        .page-item {
-            &:first-of-type,
-            &:last-of-type {
-                .page-link {
-                    background-color: transparent;
-                }
-            }
-
-            .page-link {
-                &:first-of-type {
-                    margin-inline-end: 0.8rem;
-                }
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                width: 2.4rem;
-                height: 2.4rem;
-
-                border: none;
-            }
-        }
-    }
-
-    .chat {
-        position: relative;
-        background-color: #d3b98c;
-        border-radius: 50%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        width: 5rem;
-        height: 5rem;
-
-        &:hover {
-            background-color: darken(#d3b98c, 5%);
-        }
-
-        @media (min-width: 992px) {
-            position: absolute;
-            top: 100%;
-            right: 103%;
-        }
-
-        @media (max-width: 991px) {
-            margin-top: 2rem;
-        }
+    &:hover {
+        background-color: darken(#d3b98c, 5%);
     }
 }
 

@@ -1,6 +1,5 @@
 .card {
     &.appoint-card,
-    &.past,
     &.b-appoint-card {
         .card-body {
             display: flex;
@@ -24,14 +23,9 @@
                 font-size: 1.13rem;
 
                 color: #fff;
-
-                border-radius: 0.5rem;
-
                 background-color: $cyan_light;
 
-                &.past {
-                    background-color: $gray-400;
-                }
+                border-radius: 0.5rem;
 
                 @media (min-width: 992px) {
                     display: flex;
@@ -80,10 +74,22 @@
 
                 .status {
                     position: relative;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 0.5rem;
+
+                    font-size: 12px;
+                    font-weight: 600;
+
+                    background-color: #dff5f4;
                     color: $cyan_light;
 
-                    &.cancel {
+                    &.canceled {
+                        background-color: rgba(#555, 0.1);
                         color: $red;
+                    }
+
+                    &.sucees {
+                        color: #2da771;
                     }
                 }
 
@@ -127,13 +133,6 @@
             }
 
             .actions {
-                position: relative;
-
-                .btn,
-                .dropdown {
-                    z-index: 10;
-                }
-
                 @media (min-width: 992px) {
                     margin-inline-start: auto;
 
@@ -197,6 +196,27 @@
 
         .title {
             color: $gray-900;
+        }
+
+        &.past {
+            .sqre-date {
+                background-color: #c4c4c4;
+            }
+
+            .tips {
+                .item {
+                    .icon {
+                        opacity: 0.6;
+                    }
+                }
+            }
+
+            .actions {
+                .btn {
+                    color: #c4c4c4;
+                    border: 1px solid rgba(#c4c4c4, 0.5);
+                }
+            }
         }
     }
 
