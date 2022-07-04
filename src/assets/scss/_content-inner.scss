@@ -75,10 +75,11 @@ section {
         }
 
         .breadcrumb-item {
-            &::before {
-                font-family: "\710 \710";
-                float: right;
-                padding-left: $breadcrumb-item-padding-x;
+            & + .breadcrumb-item {
+                &::before {
+                    content: "\00276F \00276F";
+                    float: right;
+                }
             }
 
             a {

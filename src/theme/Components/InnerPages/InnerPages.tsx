@@ -3,23 +3,19 @@ import React from 'react'
 import SideMenu from './SideMenu/SideMenu'
 import Data from './Data/Data'
 import MyAppointments from './MyAppointments/MyAppointments'
+import Breadcrumbs from './BookAppointment/Breadcrumbs/Breadcrumbs'
+import BookAppointment from './BookAppointment/BookAppointment'
 
 const InnerPages = () => {
     return (
-        <section className="main-content">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-5 col-lg-4">
-                        <SideMenu />
-                    </div>
-
-                    <div className="col-md-7 col-lg-8">
-                        <Data />
-                        <MyAppointments />
-                    </div>
+        <>
+            <Breadcrumbs />
+            <section className="inner-page">
+                <div className="content">
+                    <BookAppointment />
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }
 

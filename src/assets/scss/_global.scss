@@ -74,6 +74,7 @@ input {
         color: #fff !important;
     }
 }
+
 textarea {
     resize: none;
 }
@@ -81,6 +82,16 @@ textarea {
 .dropdown-menu {
     text-align: start;
     top: 0.5rem !important;
+}
+
+.inner-page {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-inline: 11rem;
+
+    @media (max-width: 767px) {
+        padding-inline: 3rem;
+    }
 }
 
 .sec-title,
@@ -189,5 +200,9 @@ textarea {
         bottom: 1rem;
         inset-inline-start: 1rem;
         z-index: 10;
+
+        img {
+            transform: rotate(180deg);
+        }
     }
 }

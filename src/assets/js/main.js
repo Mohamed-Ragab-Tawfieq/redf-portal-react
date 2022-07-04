@@ -62,7 +62,7 @@ $('select').each(function () {
         'class': 'select-options'
     }).insertAfter($styledSelect);
 
-    for (var i = 0; i < numberOfOptions; i++) {
+    for (var i = 0;i < numberOfOptions;i++) {
         $('<li />', {
             text: $this.children('option').eq(i).text(),
             rel: $this.children('option').eq(i).val()

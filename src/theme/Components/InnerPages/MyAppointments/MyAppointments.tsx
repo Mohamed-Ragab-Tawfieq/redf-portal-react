@@ -5,7 +5,6 @@ import searchIcon from '../../../../assets/images/icons/search2.svg'
 import mapIcon from "../../../../assets/images/icons/map2.svg"
 import calendarIcon from "../../../../assets/images/icons/calendar.svg"
 import clockIcon from "../../../../assets/images/icons/clock.svg"
-import chat from "../../../../assets/images/icons/chat.svg"
 
 const Appointments = [
     {
@@ -90,7 +89,6 @@ const MyAppointments = () => {
                                     <div className="info">
                                         <p className="title">{appointment.title}</p>
 
-                                        {/* classes: canceled, success */}
                                         <span className={`status ${appointment.status}`}>
                                             {appointment.status}
                                         </span>
@@ -118,8 +116,8 @@ const MyAppointments = () => {
                                                     <button className="btn btn-primary dropdown-toggle" type="button" id="saveTicket" data-bs-toggle="dropdown" aria-expanded="false">
                                                         حفظ التذكرة </button>
                                                     <ul className="dropdown-menu" aria-labelledby="saveTicket">
-                                                        <li><NavLink className="dropdown-item" to="#" download="">حفظ ملف PDF</NavLink></li>
-                                                        <li><NavLink className="dropdown-item" to="#">حفظ كصورة PNG</NavLink></li>
+                                                        <li><NavLink className="dropdown-item" to="" download="">حفظ ملف PDF</NavLink></li>
+                                                        <li><NavLink className="dropdown-item" to="">حفظ كصورة PNG</NavLink></li>
                                                     </ul>
                                                 </div>
 
@@ -159,7 +157,6 @@ const MyAppointments = () => {
                                     <div className="info">
                                         <p className="title">{appointment.title}</p>
 
-                                        {/* classes: canceled, success */}
                                         <span className={`status ${appointment.status}`}>
                                             {appointment.status}
                                         </span>
@@ -187,8 +184,8 @@ const MyAppointments = () => {
                                                     <button className="btn btn-primary dropdown-toggle" type="button" id="saveTicket" data-bs-toggle="dropdown" aria-expanded="false">
                                                         حفظ التذكرة </button>
                                                     <ul className="dropdown-menu" aria-labelledby="saveTicket">
-                                                        <li><NavLink className="dropdown-item" to="#" download="">حفظ ملف PDF</NavLink></li>
-                                                        <li><NavLink className="dropdown-item" to="#">حفظ كصورة PNG</NavLink></li>
+                                                        <li><NavLink className="dropdown-item" to="" download="">حفظ ملف PDF</NavLink></li>
+                                                        <li><NavLink className="dropdown-item" to="">حفظ كصورة PNG</NavLink></li>
                                                     </ul>
                                                 </div>
 
@@ -210,23 +207,18 @@ const MyAppointments = () => {
             <nav className="pagination-wrap">
                 <ul className="pagination">
                     <li className="page-item">
-                        <NavLink className="page-link" to="#" aria-label="Previous"> &#x276E; </NavLink>
+                        <NavLink className="page-link" to="" aria-label="Previous"> &#x276E; </NavLink>
                     </li>
-                    <li className="page-item active"><NavLink className="page-link" to="#">1</NavLink></li>
-                    <li className="page-item"><NavLink className="page-link" to="#">2</NavLink></li>
-                    <li className="page-item"><NavLink className="page-link" to="#">3</NavLink></li>
+                    <li className="page-item active"><NavLink className="page-link" to="">1</NavLink></li>
+                    <li className="page-item"><NavLink className="page-link" to="">2</NavLink></li>
+                    <li className="page-item"><NavLink className="page-link" to="">3</NavLink></li>
                     <li className="page-item">
-                        <NavLink className="page-link" to="#" aria-label="Next"> &#x276F; </NavLink>
+                        <NavLink className="page-link" to="" aria-label="Next"> &#x276F; </NavLink>
                     </li>
 
                 </ul>
             </nav>
 
-            <div className="chat">
-                <NavLink to="" className="stretched-link">
-                    <img src={chat} alt="" />
-                </NavLink>
-            </div>
 
             {/* ############ Modals ############ */}
 
@@ -242,7 +234,6 @@ const MyAppointments = () => {
                             </div>
                             <span className="code">#1234567</span>
 
-                            {/* classes = pending, success, fail */}
                             <div className="status pending">موعد قادم</div>
 
                             <div className="qr-code">
@@ -313,8 +304,8 @@ const MyAppointments = () => {
                                 <button className="btn btn-primary dropdown-toggle" type="button" id="saveTicket" data-bs-toggle="dropdown" aria-expanded="false">
                                     حفظ التذكرة </button>
                                 <ul className="dropdown-menu" aria-labelledby="saveTicket">
-                                    <li><NavLink className="dropdown-item" to="#" download="">حفظ ملف PDF</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="#">حفظ كصورة PNG</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="" download="">حفظ ملف PDF</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="">حفظ كصورة PNG</NavLink></li>
                                 </ul>
                             </div>
 
