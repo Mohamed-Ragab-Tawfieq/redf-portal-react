@@ -7,6 +7,53 @@ import calendarIcon from "../../../../assets/images/icons/calendar.svg"
 import clockIcon from "../../../../assets/images/icons/clock.svg"
 import chat from "../../../../assets/images/icons/chat.svg"
 
+const Appointments = [
+    {
+        id: 0,
+        type: "recent",
+        title: "خدمة تحديث الصك",
+        status: "pending",
+        branch: "فرع الباطح",
+        startTime: 8.5,
+        endTime: 9,
+        time: "am",
+        date: "14-02-2022"
+    },
+    {
+        id: 1,
+        type: "recent",
+        title: "خدمة تحديث الصك",
+        status: "success",
+        branch: "فرع الباطح",
+        startTime: 8.5,
+        endTime: 9,
+        time: "am",
+        date: "14-02-2022"
+    },
+    {
+        id: 2,
+        type: "recent",
+        title: "خدمة تحديث الصك",
+        status: "canceled",
+        branch: "فرع الباطح",
+        startTime: 8.5,
+        endTime: 9,
+        time: "pm",
+        date: "14-02-2022"
+    },
+    {
+        id: 3,
+        type: "past",
+        title: "خدمة تحديث الصك",
+        status: "canceled",
+        branch: "فرع الباطح",
+        startTime: 8.5,
+        endTime: 9,
+        time: "pm",
+        date: "14-02-2022"
+    }
+]
+
 const MyAppointments = () => {
     return (
         <>
@@ -28,52 +75,68 @@ const MyAppointments = () => {
             </div>
 
             <div className="recent-appoints">
-                <div className="card appoint-card">
-                    <NavLink to="" data-bs-toggle="modal" data-bs-target="#Mod_AppointDetails"></NavLink>
+                {
+                    Appointments.filter(appointment => appointment.type === "recent").map(appointment => {
+                        return (
+                            <div className={`card appoint-card mt-3 ${appointment.type === "past" ? "past" : ""}`} key={appointment.id}>
+                                <NavLink to="" data-bs-toggle="modal" data-bs-target="#Mod_AppointDetails" className="stretched-link"></NavLink>
 
-                    <div className="card-body">
-                        <div className="sqre-date">
-                            <span>14</span>
-                            <span>يناير</span>
-                        </div>
+                                <div className="card-body">
+                                    <div className={`sqre-date ${appointment.status}`}>
+                                        <span>14</span>
+                                        <span>يناير</span>
+                                    </div>
 
-                        <div className="info">
-                            <p className="title">خدمة تحديث الصك</p>
+                                    <div className="info">
+                                        <p className="title">{appointment.title}</p>
 
-                            {/* classes: canceled, success */}
-                            <span className="status success">قادم</span>
+                                        {/* classes: canceled, success */}
+                                        <span className={`status ${appointment.status}`}>
+                                            {appointment.status}
+                                        </span>
 
-                            <div className="tips">
-                                <div className="item">
-                                    <span className="icon"><img src={mapIcon} alt="" /></span>
-                                    <label>فرع الباطح</label>
-                                </div>
-                                <div className="item">
-                                    <span className="icon"><img src={calendarIcon} alt="" /></span>
-                                    <label>2022/02/14</label>
-                                </div>
-                                <div className="item">
-                                    <span className="icon"><img src={clockIcon} alt="" /></span>
-                                    <label>٨:٣٠ الي ٩:٠٠ صباحاً</label>
+                                        <div className="tips">
+                                            <div className="item">
+                                                <span className="icon"><img src={mapIcon} alt="" /></span>
+                                                <label>{appointment.branch}</label>
+                                            </div>
+                                            <div className="item">
+                                                <span className="icon"><img src={calendarIcon} alt="" /></span>
+                                                <label>{appointment.date}</label>
+                                            </div>
+                                            <div className="item">
+                                                <span className="icon"><img src={clockIcon} alt="" /></span>
+                                                <label>{appointment.startTime} إلى {appointment.endTime} {appointment.time === "am" ? "صباحا" : "مساءً"}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {
+                                        appointment.type === "recent" ?
+                                            <div className="actions">
+                                                <div className="dropdown">
+                                                    <button className="btn btn-primary dropdown-toggle" type="button" id="saveTicket" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        حفظ التذكرة </button>
+                                                    <ul className="dropdown-menu" aria-labelledby="saveTicket">
+                                                        <li><NavLink className="dropdown-item" to="#" download="">حفظ ملف PDF</NavLink></li>
+                                                        <li><NavLink className="dropdown-item" to="#">حفظ كصورة PNG</NavLink></li>
+                                                    </ul>
+                                                </div>
+
+                                                <NavLink className="btn btn-outline-primary" to="http://maps.google.com/?ll=38.882147,-76.99017" target="_blank">الاتجاهات للموقع</NavLink>
+
+                                            </div>
+                                            :
+                                            <div className="actions">
+                                                <NavLink className='btn' to="">عرض التفاصيل</NavLink>
+                                            </div>
+                                    }
                                 </div>
                             </div>
-                        </div>
+                        )
+                    })
+                }
 
-                        <div className="actions">
-                            <div className="dropdown">
-                                <button className="btn btn-primary dropdown-toggle" type="button" id="saveTicket" data-bs-toggle="dropdown" aria-expanded="false">
-                                    حفظ التذكرة </button>
-                                <ul className="dropdown-menu" aria-labelledby="saveTicket">
-                                    <li><NavLink className="dropdown-item" to="#" download="">حفظ ملف PDF</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="#">حفظ كصورة PNG</NavLink></li>
-                                </ul>
-                            </div>
-
-                            <NavLink className="btn btn-outline-primary" to="http://maps.google.com/?ll=38.882147,-76.99017" target="_blank">الاتجاهات للموقع</NavLink>
-
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <hr />
@@ -81,42 +144,67 @@ const MyAppointments = () => {
             <div className="past-appoints">
                 <h6 className="sec-title-sm text-secondary">مواعيد سابقة</h6>
 
-                <div className="card appoint-card past">
-                    <NavLink to="" data-bs-toggle="modal" data-bs-target="#Mod_AppointDetails"></NavLink>
+                {
+                    Appointments.filter(appointment => appointment.type === "past").map(appointment => {
+                        return (
+                            <div className={`card appoint-card mt-3 ${appointment.type === "past" ? "past" : ""}`} key={appointment.id}>
+                                <NavLink to="" data-bs-toggle="modal" data-bs-target="#Mod_AppointDetails" className="stretched-link"></NavLink>
 
-                    <div className="card-body">
-                        <div className="sqre-date">
-                            <span>14</span>
-                            <span>يناير</span>
-                        </div>
+                                <div className="card-body">
+                                    <div className="sqre-date">
+                                        <span>14</span>
+                                        <span>يناير</span>
+                                    </div>
 
-                        <div className="info">
-                            <p className="title">خدمة تحديث الصك</p>
-                            {/* classes: canceled, success */}
-                            <span className="status canceled">الغي بواسطة العميل</span>
+                                    <div className="info">
+                                        <p className="title">{appointment.title}</p>
 
-                            <div className="tips">
-                                <div className="item">
-                                    <span className="icon"><img src={mapIcon} alt="" /></span>
-                                    <span>فرع الباطح</span>
-                                </div>
-                                <div className="item">
-                                    <span className="icon"><img src={calendarIcon} alt="" /></span>
-                                    <span>2022/02/14</span>
-                                </div>
-                                <div className="item">
-                                    <span className="icon"><img src={clockIcon} alt="" /></span>
-                                    <span>٨:٣٠ الي ٩:٠٠ صباحاً</span>
+                                        {/* classes: canceled, success */}
+                                        <span className={`status ${appointment.status}`}>
+                                            {appointment.status}
+                                        </span>
+
+                                        <div className="tips">
+                                            <div className="item">
+                                                <span className="icon"><img src={mapIcon} alt="" /></span>
+                                                <label>{appointment.branch}</label>
+                                            </div>
+                                            <div className="item">
+                                                <span className="icon"><img src={calendarIcon} alt="" /></span>
+                                                <label>{appointment.date}</label>
+                                            </div>
+                                            <div className="item">
+                                                <span className="icon"><img src={clockIcon} alt="" /></span>
+                                                <label>{appointment.startTime} إلى {appointment.endTime} {appointment.time === "am" ? "صباحا" : "مساءً"}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {
+                                        appointment.type === "recent" ?
+                                            <div className="actions">
+                                                <div className="dropdown">
+                                                    <button className="btn btn-primary dropdown-toggle" type="button" id="saveTicket" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        حفظ التذكرة </button>
+                                                    <ul className="dropdown-menu" aria-labelledby="saveTicket">
+                                                        <li><NavLink className="dropdown-item" to="#" download="">حفظ ملف PDF</NavLink></li>
+                                                        <li><NavLink className="dropdown-item" to="#">حفظ كصورة PNG</NavLink></li>
+                                                    </ul>
+                                                </div>
+
+                                                <NavLink className="btn btn-outline-primary" to="http://maps.google.com/?ll=38.882147,-76.99017" target="_blank">الاتجاهات للموقع</NavLink>
+
+                                            </div>
+                                            :
+                                            <div className="actions">
+                                                <NavLink className='btn' to="">عرض التفاصيل</NavLink>
+                                            </div>
+                                    }
                                 </div>
                             </div>
-
-                        </div>
-
-                        <div className="actions">
-                            <button className='btn'>عرض التفاصيل</button>
-                        </div>
-                    </div>
-                </div>
+                        )
+                    })
+                }
             </div>
 
             <nav className="pagination-wrap">

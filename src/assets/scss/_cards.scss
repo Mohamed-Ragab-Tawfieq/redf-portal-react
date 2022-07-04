@@ -27,6 +27,10 @@
 
                 border-radius: 0.5rem;
 
+                &.canceled {
+                    background-color: #f44343;
+                }
+
                 @media (min-width: 992px) {
                     display: flex;
                     justify-content: center;
@@ -133,6 +137,9 @@
             }
 
             .actions {
+                position: relative;
+                z-index: 5;
+
                 @media (min-width: 992px) {
                     margin-inline-start: auto;
 
@@ -174,8 +181,8 @@
                         }
 
                         .dropdown-item {
-                            color: $cyan_light;
-                            border-radius: 0;
+                            background-color: #fff;
+                            color: #26b4b0;
 
                             &:hover {
                                 background-color: rgba($cyan, 0.1);
