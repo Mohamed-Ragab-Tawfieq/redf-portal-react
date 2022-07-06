@@ -171,29 +171,6 @@
                         padding-inline: 1rem;
                     }
                 }
-
-                .dropdown-menu {
-                    border: 1px solid rgba(11, 148, 144, 0.5);
-
-                    @media (min-width: 768px) {
-                        inset-inline-start: calc(100% + 2rem) !important;
-                    }
-
-                    li {
-                        & + li {
-                            border-top: 1px solid rgba(#000, 0.1);
-                        }
-
-                        .dropdown-item {
-                            background-color: #fff;
-                            color: #26b4b0;
-
-                            &:hover {
-                                background-color: rgba($cyan, 0.1);
-                            }
-                        }
-                    }
-                }
             }
         }
     }
@@ -235,7 +212,11 @@
         border: 1px solid $gray-200;
         border-radius: 1.25rem;
         box-shadow: 0 4px 25px rgba($black, 0.05);
-        margin-block: 2rem;
+        margin-bottom: 2rem;
+
+        & + .b-appoint-card {
+            margin-top: 2rem;
+        }
 
         small {
             color: rgba($gray-900, 0.5);
@@ -258,7 +239,7 @@
             justify-content: space-between;
             border-bottom: none;
 
-            @media (max-width: 767px) {
+            @media (max-width: 991px) {
                 flex-direction: column;
 
                 .btn {

@@ -1,0 +1,72 @@
+header {
+    &.home {
+        .navbar {
+            &:first-of-type {
+                .navbar-collapse {
+                    &.show {
+                        border-bottom: 1px solid rgba($gray-100, 0.3);
+                    }
+                }
+
+                @media (min-width: 992px) {
+                    border-bottom: 1px solid rgba($gray-100, 0.3);
+                    padding-block: 1rem;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .navbar-brand {
+                    display: grid !important;
+                    grid-template-columns: repeat(3, auto);
+                    grid-template-rows: repeat(8, 10px);
+                    gap: 0;
+
+                    .redf-img {
+                        grid-area: 1 / 1 / 9 / 2;
+                    }
+
+                    span {
+                        grid-area: 2 / 2 / 5 / 3;
+                    }
+
+                    small {
+                        grid-area: 5 / 2 / 6 / 3;
+                        font-size: 0.7rem;
+                    }
+
+                    .img-2030 {
+                        @media (min-width: 992px) {
+                            grid-area: 2 / 3 / 8 / 4;
+                            border-inline-start: 1px solid #fff;
+                            margin-inline-start: 1rem;
+                            padding-inline-start: 1rem;
+                        }
+
+                        @media (max-width: 991px) {
+                            grid-area: 7 / 2 / 8 / 4;
+                        }
+                    }
+                }
+
+                .navbar-nav {
+                    justify-content: end;
+
+                    .nav-link {
+                        color: #fff;
+
+                        &.with-caret {
+                            &::after {
+                                content: url(../images/icons/chev-down.svg);
+                                margin-inline-start: 1rem;
+                            }
+                        }
+
+                        .icon {
+                            margin-inline-end: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -4,10 +4,35 @@ import { NavLink } from 'react-router-dom'
 import logo from "../../../assets/images/logo.svg"
 import userSm from "../../../assets/images/user-sm.png"
 import notificationIcon from "../../../assets/images/icons/notification.svg"
+import logoutIcon from "../../../assets/images/icons/signout2.svg"
+
+const notifcations = [
+    {
+        id: 0,
+        type: "success",
+        title: "تم قبول الإلغاء!",
+        desc: "لقد قمت بقبول إلغاء 24 موعد بفرع الـ...",
+        date: "20-02-2022",
+    },
+    {
+        id: 1,
+        type: "settings",
+        title: "تم تغيير إعدادات الفرع",
+        desc: "لقد قمت بقبول إلغاء 24 موعد بفرع الـ...",
+        date: "20-02-2022",
+    },
+    {
+        id: 2,
+        type: "success",
+        title: "تم قبول الإلغاء!",
+        desc: "لقد قمت بقبول إلغاء 24 موعد بفرع الـ...",
+        date: "20-02-2022",
+    }
+]
 
 const Header = () => {
     return (
-        <header>
+        <header className='inner-header'>
             <div className="container">
                 <nav className="navbar navbar-expand-lg">
                     <NavLink className="navbar-brand d-none d-md-block" to="">
@@ -29,9 +54,9 @@ const Header = () => {
                                     خدمات
                                 </NavLink>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><NavLink className="dropdown-item" to="">Action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Another action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Something else here</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Action</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Another action</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Something else here</NavLink></li>
                                 </ul>
                             </li>
 
@@ -40,9 +65,9 @@ const Header = () => {
                                     برامج
                                 </button>
                                 <ul className="dropdown-menu" aria-labelledby="programs">
-                                    <li><NavLink className="dropdown-item" to="">Action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Another action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Something else here</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Action</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Another action</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Something else here</NavLink></li>
                                 </ul>
                             </li>
 
@@ -50,26 +75,59 @@ const Header = () => {
                                 <NavLink className="nav-link" to="">ﻣﺮﻛﺰ اﻟﺈﻋﻠﺎم</NavLink>
                             </li>
 
-                            <li className="nav-item dropdown user-notifi">
+                            <li className="nav-item dropdown profile-dropdown">
                                 <button className="btn dropdown-toggle user" type="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src={userSm} alt="" />
                                     <span className="mx-2">أحمد سمير</span>
                                 </button>
 
-                                <ul className="dropdown-menu" aria-labelledby="dropdownUser">
-                                    <li><NavLink className="dropdown-item" to="page/myappointments">My Appointments</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Another action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Something else here</NavLink></li>
+                                <ul className="dropdown-menu profile-menu" aria-labelledby="dropdownUser">
+                                    <li className='dropdown-item'>
+                                        <NavLink to="user">
+                                            <strong>أحمد سمير محمود علي</strong>
+                                            <small>مدير خدمة حجز موعد</small>
+                                        </NavLink>
+                                    </li>
+                                    <li className='dropdown-item email'>
+                                        ServiceManager@REDF.com
+                                    </li>
+                                    <li className='dropdown-item'>
+                                        <NavLink to="logout">
+                                            <img src={logoutIcon} className="logout-icon" alt="" />
+                                            تسجيل الخروج
+                                        </NavLink>
+                                    </li>
                                 </ul>
+                            </li>
 
-                                <button className="btn btn-light notifi" type="button" id="dropdownNotifications" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li className="nav-item dropdown">
+                                <button type="button" className="btn btn-light notifi" id="notificationsDrodownBtn" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src={notificationIcon} alt="" />
                                 </button>
 
-                                <ul className="dropdown-menu" aria-labelledby="dropdownNotifications">
-                                    <li><NavLink className="dropdown-item" to="">Action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Another action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Something else here</NavLink></li>
+                                <ul className="dropdown-menu notifications-menu" aria-labelledby="notificationsDrodownBtn">
+                                    <li className='header dropdown-item'>
+                                        <span>الإشعارات</span>
+                                        <small>7 جديد</small>
+                                    </li>
+
+                                    {
+                                        notifcations.map(item => {
+                                            return (
+                                                <li className={`dropdown-item ${item.type}`} key={item.id}>
+                                                    <NavLink to="#">
+                                                        <span className='title'>{item.title}</span>
+                                                        <small className='desc'>{item.desc}</small>
+                                                        <small className='date'>{item.date}</small>
+                                                    </NavLink>
+                                                </li>
+                                            )
+                                        })
+                                    }
+
+                                    <li className='footer dropdown-item'>
+                                        <NavLink to="" className='stretched-link'>عرض كل الإشعارات</NavLink>
+                                    </li>
                                 </ul>
                             </li>
 

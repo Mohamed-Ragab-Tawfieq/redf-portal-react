@@ -50,8 +50,6 @@ $font-family-sans-serif: "Cairo", sans-serif;
 $font-weight-normal: 600;
 $paragraph-margin-bottom: 0;
 $headings-margin-bottom: 0;
-$link-color: #fff;
-
 $border-radius: 0.5rem;
 $navbar-brand-margin-end: 0;
 
@@ -61,8 +59,7 @@ $hr-height: 0.5px;
 
 // dropdown
 $dropdown-link-hover-bg: $gray-100;
-$dropdown-link-active-bg: #26b4b0;
-$dropdown-link-active-color: #fff;
+$dropdown-link-hover-bg: rgba(#26b4b0, 0.1);
 $dropdown-link-color: #4a535a;
 $dropdown-padding-y: 0;
 $dropdown-item-padding-y: 0.4rem;

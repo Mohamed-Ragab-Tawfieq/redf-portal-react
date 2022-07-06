@@ -3,7 +3,9 @@ import { NavLink } from 'react-router-dom'
 
 import searchIcon from '../../../../assets/images/icons/search2.svg'
 import mapIcon from "../../../../assets/images/icons/map2.svg"
+import qrcode from "../../../../assets/images/qr-code.png"
 import calendarIcon from "../../../../assets/images/icons/calendar.svg"
+import serviceIcon from "../../../../assets/images/icons/service.svg"
 import clockIcon from "../../../../assets/images/icons/clock.svg"
 
 const Appointments = [
@@ -109,26 +111,20 @@ const MyAppointments = () => {
                                         </div>
                                     </div>
 
-                                    {
-                                        appointment.type === "recent" ?
-                                            <div className="actions">
-                                                <div className="dropdown">
-                                                    <button className="btn btn-primary dropdown-toggle" type="button" id="saveTicket" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        حفظ التذكرة </button>
-                                                    <ul className="dropdown-menu" aria-labelledby="saveTicket">
-                                                        <li><NavLink className="dropdown-item" to="" download="">حفظ ملف PDF</NavLink></li>
-                                                        <li><NavLink className="dropdown-item" to="">حفظ كصورة PNG</NavLink></li>
-                                                    </ul>
-                                                </div>
 
-                                                <NavLink className="btn btn-outline-primary" to="http://maps.google.com/?ll=38.882147,-76.99017" target="_blank">الاتجاهات للموقع</NavLink>
+                                    <div className="actions">
+                                        <div className="dropdown">
+                                            <button className="btn btn-primary dropdown-toggle" type="button" id="saveTicket" data-bs-toggle="dropdown" aria-expanded="false">
+                                                حفظ التذكرة </button>
+                                            <ul className="dropdown-menu save-file" aria-labelledby="saveTicket">
+                                                <li className="dropdown-item"><NavLink to="" download="">حفظ ملف PDF</NavLink></li>
+                                                <li className="dropdown-item"><NavLink to="">حفظ كصورة PNG</NavLink></li>
+                                            </ul>
+                                        </div>
 
-                                            </div>
-                                            :
-                                            <div className="actions">
-                                                <NavLink className='btn' to="">عرض التفاصيل</NavLink>
-                                            </div>
-                                    }
+                                        <NavLink className="btn btn-outline-primary" to="http://maps.google.com/?ll=38.882147,-76.99017" target="_blank">الاتجاهات للموقع</NavLink>
+
+                                    </div>
                                 </div>
                             </div>
                         )
@@ -146,8 +142,6 @@ const MyAppointments = () => {
                     Appointments.filter(appointment => appointment.type === "past").map(appointment => {
                         return (
                             <div className={`card appoint-card mt-3 ${appointment.type === "past" ? "past" : ""}`} key={appointment.id}>
-                                <NavLink to="" data-bs-toggle="modal" data-bs-target="#Mod_AppointDetails" className="stretched-link"></NavLink>
-
                                 <div className="card-body">
                                     <div className="sqre-date">
                                         <span>14</span>
@@ -177,26 +171,9 @@ const MyAppointments = () => {
                                         </div>
                                     </div>
 
-                                    {
-                                        appointment.type === "recent" ?
-                                            <div className="actions">
-                                                <div className="dropdown">
-                                                    <button className="btn btn-primary dropdown-toggle" type="button" id="saveTicket" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        حفظ التذكرة </button>
-                                                    <ul className="dropdown-menu" aria-labelledby="saveTicket">
-                                                        <li><NavLink className="dropdown-item" to="" download="">حفظ ملف PDF</NavLink></li>
-                                                        <li><NavLink className="dropdown-item" to="">حفظ كصورة PNG</NavLink></li>
-                                                    </ul>
-                                                </div>
-
-                                                <NavLink className="btn btn-outline-primary" to="http://maps.google.com/?ll=38.882147,-76.99017" target="_blank">الاتجاهات للموقع</NavLink>
-
-                                            </div>
-                                            :
-                                            <div className="actions">
-                                                <NavLink className='btn' to="">عرض التفاصيل</NavLink>
-                                            </div>
-                                    }
+                                    <div className="actions">
+                                        <NavLink className='btn' to="" data-bs-toggle="modal" data-bs-target="#Mod_AppointDetails">عرض التفاصيل</NavLink>
+                                    </div>
                                 </div>
                             </div>
                         )
@@ -229,15 +206,15 @@ const MyAppointments = () => {
 
                         <div className="modal-header with-status">
                             <div className="right">
-                                <button type="button" className="btn close" data-bs-dismiss="modal" aria-label="Close"><i className="fas fa-x"></i></button>
+                                <button type="button" className="btn close" data-bs-dismiss="modal" aria-label="Close">x</button>
                                 <h4 className="title">تفاصيل الموعد</h4>
                             </div>
                             <span className="code">#1234567</span>
 
-                            <div className="status pending">موعد قادم</div>
+                            <div className={`status pending`}>موعد قادم</div>
 
                             <div className="qr-code">
-                                <img src="assets/images/qr-code.png" className="img-fluid" alt="" />
+                                <img src={qrcode} className="img-fluid" alt="" />
                             </div>
                         </div>
 
@@ -245,26 +222,26 @@ const MyAppointments = () => {
                             <div className="info">
                                 <div className="time">
                                     <div className="item">
-                                        <span className="icon"><img src="assets/images/icons/calendar.svg" alt="" /></span>
+                                        <span className="icon"><img src={calendarIcon} alt="" /></span>
                                         <label>الثلاثاء</label>
                                         <strong className="text">2022/02/14</strong>
                                     </div>
 
                                     <div className="item">
-                                        <span className="icon"><img src="assets/images/icons/clock.svg" alt="" /></span>
+                                        <span className="icon"><img src={clockIcon} alt="" /></span>
                                         <label>صباحاً</label>
                                         <strong className="text">٨:٣٠ الي ٩:٠٠</strong>
                                     </div>
                                 </div>
 
                                 <div className="item">
-                                    <span className="icon"><img src="assets/images/icons/service.svg" alt="" /></span>
+                                    <span className="icon"><img src={serviceIcon} alt="" /></span>
                                     <label>الخدمة</label>
                                     <span className="text">تحديث الصك</span>
                                 </div>
 
                                 <div className="item">
-                                    <span className="icon"><img src="assets/images/icons/map.svg" alt="" /></span>
+                                    <span className="icon"><img src={mapIcon} alt="" /></span>
                                     <label>الفرع</label>
                                     <span className="text">فرع المدينة المنورة بالباطح</span>
                                 </div>
@@ -303,9 +280,9 @@ const MyAppointments = () => {
                             <div className="dropdown">
                                 <button className="btn btn-primary dropdown-toggle" type="button" id="saveTicket" data-bs-toggle="dropdown" aria-expanded="false">
                                     حفظ التذكرة </button>
-                                <ul className="dropdown-menu" aria-labelledby="saveTicket">
-                                    <li><NavLink className="dropdown-item" to="" download="">حفظ ملف PDF</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">حفظ كصورة PNG</NavLink></li>
+                                <ul className="dropdown-menu save-file" aria-labelledby="saveTicket">
+                                    <li className="dropdown-item"><NavLink to="" download="">حفظ ملف PDF</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">حفظ كصورة PNG</NavLink></li>
                                 </ul>
                             </div>
 

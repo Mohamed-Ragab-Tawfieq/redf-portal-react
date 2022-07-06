@@ -63,9 +63,9 @@ const HomeHeader = () => {
                                     خدمات
                                 </NavLink>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><NavLink className="dropdown-item" to="">Action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Another action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Something else here</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Action</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Another action</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Something else here</NavLink></li>
                                 </ul>
                             </li>
 
@@ -74,9 +74,9 @@ const HomeHeader = () => {
                                     برامج
                                 </button>
                                 <ul className="dropdown-menu" aria-labelledby="programs">
-                                    <li><NavLink className="dropdown-item" to="">Action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Another action</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="">Something else here</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Action</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Another action</NavLink></li>
+                                    <li className="dropdown-item"><NavLink to="">Something else here</NavLink></li>
                                 </ul>
                             </li>
 

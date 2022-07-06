@@ -1,8 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import infoIcon from "../../../../assets/images/icons/alert2.svg";
-import lockIcon from "../../../../assets/images/icons/lock.svg";
+import statsIcon from "../../../../assets/images/icons/stats.svg";
+import sheetIcon from "../../../../assets/images/icons/sheet.svg";
+import calendarIcon from "../../../../assets/images/icons/calendar3.svg";
+import arrowIcon from "../../../../assets/images/icons/arrow-top.svg";
 import signoutIcon from "../../../../assets/images/icons/signout.svg";
 import userIcon from "../../../../assets/images/icons/user2.svg";
 import likeIcon from "../../../../assets/images/icons/like.svg";
@@ -19,19 +21,19 @@ const SideMenu = () => {
                     <ul className="navbar-nav">
                         <li className="side-item">
                             <NavLink to="page/data" className="stretched-link"> صفحة البيانات </NavLink>
-                            <img src={infoIcon} alt="" />
+                            <img src={statsIcon} alt="" />
                         </li>
                         <li className="side-item">
                             <NavLink to="" className="stretched-link"> عقودي </NavLink>
-                            <img src={infoIcon} alt="" />
+                            <img src={sheetIcon} alt="" />
                         </li>
                         <li className="side-item">
                             <NavLink to="page/myappointments" className="stretched-link"> مواعيدي </NavLink>
-                            <img src={lockIcon} alt="" />
+                            <img src={calendarIcon} alt="" />
                         </li>
                         <li className="side-item">
                             <NavLink to="" className="stretched-link"> طلباتي </NavLink>
-                            <img src={infoIcon} alt="" />
+                            <img src={arrowIcon} alt="" />
                         </li>
                         <li className="side-item">
                             <NavLink to="" className="stretched-link"> المعلومات الشخصية </NavLink>

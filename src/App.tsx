@@ -9,24 +9,7 @@ import Bottombar from './theme/Components/Bottombar/Bottombar';
 import Header from './theme/Components/Header/Header';
 import InnerPages from './theme/Components/InnerPages/InnerPages';
 
-import arrowupIcon from './assets/images/icons/chev-down.svg'
 import chat from "./assets/images/icons/chat.svg"
-
-// Scroll to top button appear
-const scrollBtn = document.getElementById("goTop");
-
-const scrollTop = () => {
-  if (window.scrollY > 400) {
-    scrollBtn!.style.visibility = "visible";
-  } else {
-    scrollBtn!.style.visibility = "hidden";
-  }
-};
-
-document.addEventListener("scroll", () => {
-  scrollTop();
-});
-
 
 const App = () => {
 
@@ -39,12 +22,6 @@ const App = () => {
       <InnerPages />
       <Footer />
       <Bottombar />
-
-      <div className="go-top" id='goTop'>
-        <NavLink to="" className="btn btn-primary scroll-to-top">
-          <img src={arrowupIcon} alt="" />
-        </NavLink>
-      </div>
 
       <div className="chat">
         <NavLink to="" className="stretched-link">
