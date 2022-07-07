@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import logo from "../../../assets/images/logo.svg"
 import userSm from "../../../assets/images/user-sm.png"
+import userIcon from "../../../assets/images/icons/user2.svg"
 import notificationIcon from "../../../assets/images/icons/notification.svg"
 import logoutIcon from "../../../assets/images/icons/signout2.svg"
 
@@ -85,12 +86,16 @@ const Header = () => {
                                     <li className='dropdown-item'>
                                         <NavLink to="user">
                                             <strong>أحمد سمير محمود علي</strong>
-                                            <small>مدير خدمة حجز موعد</small>
+                                            <small>مستفيد قرض مدعوم ومباشر</small>
                                         </NavLink>
                                     </li>
                                     <li className='dropdown-item email'>
                                         ServiceManager@REDF.com
                                     </li>
+                                    <NavLink className='dropdown-item profile' to={''}>
+                                        <img src={userIcon} alt="" />
+                                        <span className='mx-3'>عرض الملف الشخصي</span>
+                                    </NavLink>
                                     <li className='dropdown-item'>
                                         <NavLink to="logout">
                                             <img src={logoutIcon} className="logout-icon" alt="" />

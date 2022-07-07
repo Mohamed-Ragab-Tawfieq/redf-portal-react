@@ -123,10 +123,20 @@
 
         .profile-menu {
             .dropdown-item {
+                padding: 10px 1.5rem;
+
                 &:first-of-type {
                     a {
                         display: flex;
                         flex-direction: column;
+
+                        strong {
+                            color: #444;
+                        }
+                        small {
+                            font-size: 10px;
+                            color: #d3b98c;
+                        }
                     }
                 }
 
@@ -137,6 +147,12 @@
                     font-size: 12px;
                     padding-block: 8px;
                     border-top: none;
+                }
+
+                &.profile {
+                    background-color: rgba(#2abab5, 0.2);
+                    padding-block: 1rem;
+                    color: #26b4b0;
                 }
 
                 a {
