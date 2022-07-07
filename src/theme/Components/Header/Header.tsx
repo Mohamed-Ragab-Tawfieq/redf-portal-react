@@ -6,6 +6,7 @@ import userSm from "../../../assets/images/user-sm.png"
 import userIcon from "../../../assets/images/icons/user2.svg"
 import notificationIcon from "../../../assets/images/icons/notification.svg"
 import logoutIcon from "../../../assets/images/icons/signout2.svg"
+import MegaMenu from './MegaMenu'
 
 const notifcations = [
     {
@@ -31,9 +32,9 @@ const notifcations = [
     }
 ]
 
-const Header = () => {
+const Header = (props: any) => {
     return (
-        <header className='inner-header'>
+        <header className={`inner-header ${props.isScroll ? ' fixed' : ''}`}>
             <div className="container">
                 <nav className="navbar navbar-expand-lg">
                     <NavLink className="navbar-brand d-none d-md-block" to="">
@@ -50,30 +51,29 @@ const Header = () => {
                                 <NavLink className="nav-link active" aria-current="page" to="">عن الصندوق</NavLink>
                             </li>
 
-                            <li className="nav-item dropdown">
-                                <NavLink className="nav-link dropdown-toggle" to="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li className="nav-item dropdown mega-menu">
+                                <button className="btn dropdown-toggle" id="servicesDropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     خدمات
-                                </NavLink>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li className="dropdown-item"><NavLink to="">Action</NavLink></li>
-                                    <li className="dropdown-item"><NavLink to="">Another action</NavLink></li>
-                                    <li className="dropdown-item"><NavLink to="">Something else here</NavLink></li>
-                                </ul>
+                                </button>
+                                <MegaMenu title="خدمات" />
                             </li>
 
-                            <li className="nav-item dropdown">
-                                <button className="btn dropdown-toggle" type="button" id="programs" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li className="nav-item dropdown mega-menu">
+                                <button className="btn dropdown-toggle" id="programsDropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     برامج
                                 </button>
-                                <ul className="dropdown-menu" aria-labelledby="programs">
-                                    <li className="dropdown-item"><NavLink to="">Action</NavLink></li>
-                                    <li className="dropdown-item"><NavLink to="">Another action</NavLink></li>
-                                    <li className="dropdown-item"><NavLink to="">Something else here</NavLink></li>
-                                </ul>
+                                <MegaMenu title="البرامج" />
+                            </li>
+
+                            <li className="nav-item dropdown mega-menu">
+                                <button className="btn dropdown-toggle" id="programsDropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    ﻣﺮﻛﺰ اﻟﺈﻋﻠﺎم
+                                </button>
+                                <MegaMenu title="ﻣﺮﻛﺰ اﻟﺈﻋﻠﺎم" />
                             </li>
 
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="">ﻣﺮﻛﺰ اﻟﺈﻋﻠﺎم</NavLink>
+                                <NavLink className="nav-link active" aria-current="page" to="">تواصل معنا</NavLink>
                             </li>
 
                             <li className="nav-item dropdown profile-dropdown">

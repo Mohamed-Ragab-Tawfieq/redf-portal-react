@@ -373,17 +373,18 @@
                             padding-block: 0.75rem;
                             color: #fff;
 
-                            &.pending {
+                            &.new {
                                 background: darken($cyan, 5%);
                                 color: $cyan_lighter;
                             }
 
-                            &.success {
+                            &.attended {
                                 background: $green;
                                 color: #3dffa9;
                             }
 
-                            &.fail {
+                            &.CancelledByClient,
+                            &.CancelledBySystem {
                                 background: $red;
                             }
                         }

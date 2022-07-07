@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../src/assets/scss/App.scss';
 import { NavLink, useLocation } from 'react-router-dom';
@@ -11,15 +11,24 @@ import InnerPages from './theme/Components/InnerPages/InnerPages';
 
 import chat from "./assets/images/icons/chat.svg"
 
+
+
 const App = () => {
+  const [isScroll, setScroll] = useState(false);
+  document.addEventListener('scroll', function (e) {
+    if (window.scrollY > 0) {
+      setScroll(true)
+    } else {
+      setScroll(false)
+    }
+  });
 
   const route = useLocation();
 
   return (
     <div className='layout'>
-      <Topbar />
-      {route.pathname.includes("/page") && < Header />}
-      <InnerPages />
+      <Topbar isScroll={isScroll} />
+      <InnerPages isScroll={isScroll} />
       <Footer />
       <Bottombar />
 

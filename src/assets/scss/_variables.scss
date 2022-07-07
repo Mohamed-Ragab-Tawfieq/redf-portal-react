@@ -46,7 +46,7 @@ $grid-gutter-width: 57px !default;
 
 // Typography
 $body-color: $gray-700;
-$font-family-sans-serif: "Cairo", sans-serif;
+$font-family-sans-serif: "STC", sans-serif;
 $font-weight-normal: 600;
 $paragraph-margin-bottom: 0;
 $headings-margin-bottom: 0;
@@ -64,6 +64,12 @@ $dropdown-link-color: #4a535a;
 $dropdown-padding-y: 0;
 $dropdown-item-padding-y: 0.4rem;
 $caret-vertical-align: 0.155em;
+
+// nav-tabs
+$nav-tabs-link-active-bg: transparent;
+$nav-tabs-border-color: transparent;
+$nav-tabs-link-active-border-color: transparent;
+$nav-tabs-link-hover-border-color: transparent;
 
 // Cards
 $card-border-color: rgba(228, 228, 228, 0.5);

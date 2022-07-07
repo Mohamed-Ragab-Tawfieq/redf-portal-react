@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom'
 
 import eyeIcon from '../../../assets/images/icons/eye.svg'
 
-const Topbar = () => {
+const Topbar = (props: any) => {
     return (
-        <div className="topbar">
+        <div className={`topbar ${props.isScroll ? 'fixed' : ''}`}>
             <div className="contact-date">
                 <div className="date"> الثلاثاء 13 نوفمبر 2021 | بتوقيت القاهرة 07:13 م </div>
 
